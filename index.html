@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			function init() {
+				var container = document.getElementById("gallery");
+				for(var i = 0; i < 100; i++)
+				{
+					let div = document.createElement("div"); 
+					div.id = "item"
+					div.style.width = "180px";
+					div.style.height = "170px";
+					div.style.id = "item"
+					let image_link = 'https://picsum.photos/180/170?' + i;
+					div.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(" + image_link + ")";
+					let username = Math.random().toString(36).substring(2, 7) + Math.random().toString(36).substring(2, 7);
+					let age = Math.floor(Math.random() * 99);
+					let description = Math.random().toString(36).substring(2, 7) + Math.random().toString(36).substring(2, 7);
+					div.innerHTML = "<b> Username: " + username + " <br> Age: " + age + " <br> Description: " + description + " </b>";
+					div.style.color = "white";
+					container.appendChild(div);
+				}
+			}
+		</script>
+	</head>
+
+	<body onLoad="init();">
+		<div id="gallery">
+		</div>
+	</body>
+</html>
